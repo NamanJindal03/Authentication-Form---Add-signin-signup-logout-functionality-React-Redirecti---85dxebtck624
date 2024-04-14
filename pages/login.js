@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {useRouter} from 'next/navigation'
 
@@ -26,6 +26,12 @@ const Login = () => {
       setError(true);
     }
   }
+  useEffect(()=>{
+    const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+    if(isLoggedIn){
+      router.push('/store');
+    }
+  },[])
   return (
     <div className='login'>
       <h2>Login</h2>
