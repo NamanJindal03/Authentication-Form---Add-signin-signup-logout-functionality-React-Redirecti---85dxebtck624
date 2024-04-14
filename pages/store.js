@@ -5,8 +5,8 @@ function Store() {
   const router = useRouter();
 
   useEffect(()=>{
-    const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
-    if(!isLoggedIn){
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if(isLoggedIn === "false"){
       router.push('/login');
     }
   },[])

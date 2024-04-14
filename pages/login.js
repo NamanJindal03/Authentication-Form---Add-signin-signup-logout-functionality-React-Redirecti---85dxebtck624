@@ -22,19 +22,19 @@ const Login = () => {
       setError(false);
       setEmail('');
       setPassword('');
-      localStorage.setItem('isLoggedIn', JSON.stringify(true));
+      localStorage.setItem('isLoggedIn', "true");
       router.push('/store')
     }
     else{
       setError(true);
     }
   }
-  useEffect(()=>{
-    const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
-    if(isLoggedIn){
-      router.push('/store');
-    }
-  },[])
+  // useEffect(()=>{
+  //   const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+  //   if(isLoggedIn){
+  //     router.push('/store');
+  //   }
+  // },[])
   return (
     <div className='login'>
       <h2>Login</h2>
