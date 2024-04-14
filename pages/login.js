@@ -8,7 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
-  // const [isLogIn, setIsLogIn] = useState(false);
+  const [isLogIn, setIsLogIn] = useState(false);
 
   function handleLogin(e){
     e.preventDefault();
@@ -18,7 +18,10 @@ const Login = () => {
     }
     const registeredUser = JSON.parse(localStorage.getItem('user'));
     if(registeredUser && registeredUser.email === email && registeredUser.password === password){
-      // setIsLogIn(true);
+      setIsLogIn(true);
+      setError(false);
+      setEmail('');
+      setPassword('');
       localStorage.setItem('isLoggedIn', JSON.stringify(true));
       router.push('/store')
     }
