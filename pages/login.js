@@ -22,6 +22,9 @@ const Login = () => {
       localStorage.setItem('isLoggedIn', JSON.stringify(true));
       router.push('/store')
     }
+    else{
+      setError(true);
+    }
   }
   return (
     <div className='login'>
